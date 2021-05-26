@@ -1,0 +1,62 @@
+{
+	"license": "MIT",
+	"version": "0.1.0",
+	"main": "build/js/tempusdominus-bootstrap-4.js",
+	"name": "bootstrap4-datetimepicker",
+	"author": "ww9",
+	"contributors": [
+		"Jonathan Peterson (Original author)",
+		"Anton Bagdatyev (Tonix)"
+	],
+	"homepage": "https://ww9.github.io/bootstrap4-datetimepicker/",
+	"keywords": [
+		"bootstrap",
+		"datepicker",
+		"datetimepicker",
+		"timepicker",
+		"moment"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/ww9/bootstrap4-datetimepicker.git"
+	},
+	"files": [
+		"**"
+	],
+	"bugs": {
+		"url": "https://github.com/ww9/bootstrap4-datetimepicker/issues"
+	},
+	"dependencies": {
+		"bootstrap": "^4.6.0",
+		"jquery": "^3.5.1",
+		"moment": "^2.29.0",
+		"moment-timezone": "^0.5.31",
+		"popper.js": "^1.16.1"
+	},
+	"scripts": {
+		"js": "esbuild bootstrap4-datetimepicker.js --minify --sourcemap --bundle --outfile=build/bootstrap4-datetimepicker.min.js",
+		"css": "node-sass bootstrap4-datetimepicker.scss build/bootstrap4-datetimepicker.min.css --importer node_modules/node-sass-package-importer/dist/cli.js --source-map true --output-style compressed --sourceMapContents true",
+		"build": "npm run js && npm run css",
+		"watch": "./node_modules/.bin/onchange 'bootstrap4-datetimepicker.js' 'bootstrap4-datetimepicker.scss' -- npm run build"
+	},
+	"description": "A date/time picker component designed to work with Bootstrap 4 and Momentjs.",
+	"devDependencies": {
+		"esbuild": "^0.8.31",
+		"node-sass": "^5.0.0",
+		"node-sass-package-importer": "^5.3.2"
+	},
+	"prettier": {
+		"braceStyle": "1tbs",
+		"useTabs": true,
+		"tabWidth": 3,
+		"trailingComma": "es5",
+		"printWidth": 200,
+		"semi": true,
+		"proseWrap": "never",
+		"singleQuote": true,
+		"quoteProps": "consistent",
+		"bracketSpacing": false,
+		"arrowParens": "always",
+		"endOfLine": "lf"
+	}
+}
